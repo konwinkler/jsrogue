@@ -42,7 +42,9 @@ Game.ItemRepository.define('corpse', {
 Game.ItemRepository.define('rock', {
     name: 'rock',
     character: '*',
-    foreground: 'white'
+    foreground: 'white',
+    description: 'This item rocks!',
+    mixins: [Game.ItemMixins.Describable]
 });
 
 // Weapons

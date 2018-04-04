@@ -1,5 +1,20 @@
 Game.ItemMixins = {};
 
+// For fluff
+Game.ItemMixins.Describable = {
+    name: 'Describable',
+    init: function(template) {
+        this._description = template['description'] || '';
+    },
+    listeners: {
+        'details': function() {
+            var results = [];
+            results.push({key: 'This items', value: 'rocks!'});
+            return results;
+        }
+    }
+}
+
 // Edible mixins
 Game.ItemMixins.Edible = {
     name: 'Edible',

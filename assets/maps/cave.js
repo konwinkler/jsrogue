@@ -19,7 +19,7 @@ Game.Map.Cave = function(tiles, player) {
             }
         }
         // 15 items per floor
-        for (var i = 0; i < 15; i++) {
+        for (var i = 0; i < 40; i++) {
             // Add a random entity
             this.addItemAtRandomPosition(Game.ItemRepository.createRandom(), z);
         }
@@ -29,7 +29,7 @@ Game.Map.Cave = function(tiles, player) {
         'tunic', 'chainmail', 'platemail'];
     for (var i = 0; i < templates.length; i++) {
         this.addItemAtRandomPosition(Game.ItemRepository.create(templates[i]),
-            Math.floor(this._depth * Math.random()));
+            0);
     }
     // Add a hole to the final cavern on the last level.
     var holePosition = this.getRandomFloorPosition(this._depth - 1);
